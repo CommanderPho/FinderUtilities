@@ -34,6 +34,7 @@ class FinderSync: FIFinderSync {
 		case .toolbarItemMenu:
 			menu.addItem(withTitle: "Open Terminal Here...", action: #selector(openTerminalClicked(_:)), keyEquivalent: "")
 			menu.addItem(withTitle: "Open Fork Here...", action: #selector(openForkGitClientHereClicked(_:)), keyEquivalent: "")
+			menu.addItem(withTitle: "Open VS Code Here...", action: #selector(openMicrosoftVisualStudioCodeHereClicked(_:)), keyEquivalent: "")
 			menu.addItem(withTitle: "Copy directory path", action: #selector(copyPathToClipboard), keyEquivalent: "")
 			menu.addItem(withTitle: "Create empty.txt Here", action: #selector(createEmptyFileClicked(_:)), keyEquivalent: "")
 
@@ -44,6 +45,7 @@ class FinderSync: FIFinderSync {
 			// Called when the background is clicked with no items selected.
 			menu.addItem(withTitle: "Open Terminal Here...", action: #selector(openTerminalClicked(_:)), keyEquivalent: "")
 			menu.addItem(withTitle: "Open Fork Here...", action: #selector(openForkGitClientHereClicked(_:)), keyEquivalent: "")
+			menu.addItem(withTitle: "Open VS Code Here...", action: #selector(openMicrosoftVisualStudioCodeHereClicked(_:)), keyEquivalent: "")
 			menu.addItem(withTitle: "Copy directory path", action: #selector(copyPathToClipboard), keyEquivalent: "")
 
 		case .contextualMenuForItems:
@@ -143,9 +145,30 @@ class FinderSync: FIFinderSync {
 		do {
 			try task.run()
 		} catch let error as NSError {
-			NSLog("openForkGitClientHereClicked(...): Failed to open Terminal.app: %@", error.description as NSString)
+			NSLog("openForkGitClientHereClicked(...): Failed to open Fork.app: %@", error.description as NSString)
 		}
 	}
+
+	@IBAction func openMicrosoftVisualStudioCodeHereClicked(_ sender: AnyObject?) {
+
+		guard let target = FIFinderSyncController.default().targetedURL() else {
+			NSLog("openMicrosoftVisualStudioCodeHereClicked(...): Failed to obtain targeted URL: %@")
+			return
+		}
+
+		let vsCodeAppExecutionPath: String = "/Applications/Visual Studio Code.app"
+
+		let task = Process()
+		task.executableURL = URL(fileURLWithPath: "/usr/bin/open")
+		task.arguments = ["-a", vsCodeAppExecutionPath, "\(target)"]
+
+		do {
+			try task.run()
+		} catch let error as NSError {
+			NSLog("openMicrosoftVisualStudioCodeHereClicked(...): Failed to open Visual Studio Code.app: %@", error.description as NSString)
+		}
+	}
+
 
 
 
