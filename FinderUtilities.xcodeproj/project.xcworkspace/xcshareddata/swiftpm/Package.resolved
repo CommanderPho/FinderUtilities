@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "SwiftGit2",
+        "repositoryURL": "https://github.com/CommanderPho/SwiftGit2.git",
+        "state": {
+          "branch": "spm-linux",
+          "revision": "5735d61afffce5c26200c2851a79c5bcbaa1822b",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

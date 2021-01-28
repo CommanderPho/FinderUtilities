@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		D74559D625C2399D00FBD82E /* ActionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74559D525C2399D00FBD82E /* ActionItem.swift */; };
 		D74559DE25C240FE00FBD82E /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74559DD25C240FE00FBD82E /* HelperFunctions.swift */; };
+		D74559E825C2497900FBD82E /* SwiftGit2 in Frameworks */ = {isa = PBXBuildFile; productRef = D74559E725C2497900FBD82E /* SwiftGit2 */; };
 		D7B4838924FE9E1200B50BA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7B4838824FE9E1200B50BA8 /* Assets.xcassets */; };
 		E476AC5623158BEE00A3A1FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E476AC5523158BEE00A3A1FF /* AppDelegate.swift */; };
 		E476AC5823158BEF00A3A1FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E476AC5723158BEF00A3A1FF /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D74559E825C2497900FBD82E /* SwiftGit2 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +179,9 @@
 			dependencies = (
 			);
 			name = RightClickExtension;
+			packageProductDependencies = (
+				D74559E725C2497900FBD82E /* SwiftGit2 */,
+			);
 			productName = RightClickExtension;
 			productReference = E476AC6723158C3200A3A1FF /* RightClickExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -221,6 +226,9 @@
 				Base,
 			);
 			mainGroup = E476AC4923158BEE00A3A1FF;
+			packageReferences = (
+				D74559E625C2497900FBD82E /* XCRemoteSwiftPackageReference "SwiftGit2" */,
+			);
 			productRefGroup = E476AC5323158BEE00A3A1FF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -536,6 +544,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D74559E625C2497900FBD82E /* XCRemoteSwiftPackageReference "SwiftGit2" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CommanderPho/SwiftGit2.git";
+			requirement = {
+				branch = "spm-linux";
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D74559E725C2497900FBD82E /* SwiftGit2 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D74559E625C2497900FBD82E /* XCRemoteSwiftPackageReference "SwiftGit2" */;
+			productName = SwiftGit2;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E476AC4A23158BEE00A3A1FF /* Project object */;
 }
