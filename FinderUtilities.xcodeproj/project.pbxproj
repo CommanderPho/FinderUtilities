@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D74559D625C2399D00FBD82E /* ActionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74559D525C2399D00FBD82E /* ActionItem.swift */; };
+		D74559DE25C240FE00FBD82E /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74559DD25C240FE00FBD82E /* HelperFunctions.swift */; };
 		D7B4838924FE9E1200B50BA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7B4838824FE9E1200B50BA8 /* Assets.xcassets */; };
 		E476AC5623158BEE00A3A1FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E476AC5523158BEE00A3A1FF /* AppDelegate.swift */; };
 		E476AC5823158BEF00A3A1FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E476AC5723158BEF00A3A1FF /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		D74559D525C2399D00FBD82E /* ActionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionItem.swift; sourceTree = "<group>"; };
+		D74559DD25C240FE00FBD82E /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		D7B4838824FE9E1200B50BA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E476AC5223158BEE00A3A1FF /* FinderUtilities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinderUtilities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E476AC5523158BEE00A3A1FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,21 @@
 			path = Actions;
 			sourceTree = "<group>";
 		};
+		D74559DB25C240DA00FBD82E /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D74559DC25C240F100FBD82E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D74559DD25C240FE00FBD82E /* HelperFunctions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		E476AC4923158BEE00A3A1FF = {
 			isa = PBXGroup;
 			children = (
@@ -114,6 +131,8 @@
 		E476AC6823158C3200A3A1FF /* RightClickExtension */ = {
 			isa = PBXGroup;
 			children = (
+				D74559DC25C240F100FBD82E /* Helpers */,
+				D74559DB25C240DA00FBD82E /* Extensions */,
 				D74559D425C2398500FBD82E /* Actions */,
 				D7B4838824FE9E1200B50BA8 /* Assets.xcassets */,
 				E476AC6923158C3200A3A1FF /* RightClickExtension.swift */,
@@ -247,6 +266,7 @@
 			files = (
 				D74559D625C2399D00FBD82E /* ActionItem.swift in Sources */,
 				E476AC6A23158C3200A3A1FF /* RightClickExtension.swift in Sources */,
+				D74559DE25C240FE00FBD82E /* HelperFunctions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

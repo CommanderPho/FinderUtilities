@@ -124,24 +124,18 @@ class FinderSync: FIFinderSync {
 
     /// Copies the selected file and/or directory paths to pasteboard
 	@IBAction func copySelectedPathsToClipboard(_ sender: AnyObject?) {
-
 		guard let target = FIFinderSyncController.default().selectedItemURLs() else {
 			NSLog("copySelectedPathsToClipboard(...): Failed to obtain selected URLs: %@")
 			return
 		}
-
-		let pasteboard = NSPasteboard.general
-		pasteboard.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
 		var result = ""
-
 		// Loop through all selected paths
 		for path in target {
 			result.append(contentsOf: path.relativePath)
 			result.append("\n")
 		}
 		result.removeLast() // Remove trailing \n
-
-		pasteboard.setString(result, forType: NSPasteboard.PasteboardType.string)
+		Helpers.setClipboard(string: result)
 	}
 
 
@@ -151,11 +145,7 @@ class FinderSync: FIFinderSync {
 			NSLog("copyPathToClipboard(...): Failed to obtain targeted URLs: %@")
             return
         }
-        
-        let pasteboard = NSPasteboard.general
-        pasteboard.declareTypes([NSPasteboard.PasteboardType.string], owner: nil)
-        var result = target.relativePath
-        pasteboard.setString(result, forType: NSPasteboard.PasteboardType.string)
+		Helpers.setClipboard(string: target.relativePath)
     }
 
 
@@ -202,48 +192,22 @@ extension FinderSync {
 
 	/// Opens a macOS Terminal.app window in the user-chosen folder
 	@IBAction func openTerminalClicked(_ sender: AnyObject?) {
-
 		guard let target = FIFinderSyncController.default().targetedURL() else {
-
 			NSLog("openTerminalClicked(...): Failed to obtain targeted URL: %@")
-
 			return
 		}
-
-		let task = Process()
-		task.executableURL = URL(fileURLWithPath: "/usr/bin/open")
-		task.arguments = ["-a", "terminal", "\(target)"]
-
-		do {
-
-			try task.run()
-
-		} catch let error as NSError {
-
-			NSLog("openTerminalClicked(...): Failed to open Terminal.app: %@", error.description as NSString)
-		}
+		Helpers.performOpen(programPathString: "terminal", additionalArguments: ["\(target)"])
 	}
 
 
 
 	@IBAction func openMicrosoftVisualStudioCodeHereClicked(_ sender: AnyObject?) {
-
 		guard let target = FIFinderSyncController.default().targetedURL() else {
 			NSLog("openMicrosoftVisualStudioCodeHereClicked(...): Failed to obtain targeted URL: %@")
 			return
 		}
-
 		let vsCodeAppExecutionPath: String = "/Applications/Visual Studio Code.app"
-
-		let task = Process()
-		task.executableURL = URL(fileURLWithPath: "/usr/bin/open")
-		task.arguments = ["-a", vsCodeAppExecutionPath, "\(target)"]
-
-		do {
-			try task.run()
-		} catch let error as NSError {
-			NSLog("openMicrosoftVisualStudioCodeHereClicked(...): Failed to open Visual Studio Code.app: %@", error.description as NSString)
-		}
+		Helpers.performOpen(programPathString: vsCodeAppExecutionPath, additionalArguments: ["\(target)"])
 	}
 
 
@@ -257,23 +221,12 @@ extension FinderSync {
 extension FinderSync {
 
 	@IBAction func openForkGitClientHereClicked(_ sender: AnyObject?) {
-
 		guard let target = FIFinderSyncController.default().targetedURL() else {
 			NSLog("openForkGitClientHereClicked(...): Failed to obtain targeted URL: %@")
 			return
 		}
-
 		let forkAppExecutionPath: String = "/Applications/Fork.app"
-
-		let task = Process()
-		task.executableURL = URL(fileURLWithPath: "/usr/bin/open")
-		task.arguments = ["-a", forkAppExecutionPath, "\(target)"]
-
-		do {
-			try task.run()
-		} catch let error as NSError {
-			NSLog("openForkGitClientHereClicked(...): Failed to open Fork.app: %@", error.description as NSString)
-		}
+		Helpers.performOpen(programPathString: forkAppExecutionPath, additionalArguments: ["\(target)"])
 	}
 
 
