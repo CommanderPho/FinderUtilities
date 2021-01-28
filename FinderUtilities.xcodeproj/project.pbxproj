@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D74559D625C2399D00FBD82E /* ActionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74559D525C2399D00FBD82E /* ActionItem.swift */; };
 		D7B4838924FE9E1200B50BA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7B4838824FE9E1200B50BA8 /* Assets.xcassets */; };
 		E476AC5623158BEE00A3A1FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E476AC5523158BEE00A3A1FF /* AppDelegate.swift */; };
 		E476AC5823158BEF00A3A1FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E476AC5723158BEF00A3A1FF /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D74559D525C2399D00FBD82E /* ActionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionItem.swift; sourceTree = "<group>"; };
 		D7B4838824FE9E1200B50BA8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E476AC5223158BEE00A3A1FF /* FinderUtilities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FinderUtilities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E476AC5523158BEE00A3A1FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D74559D425C2398500FBD82E /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				D74559D525C2399D00FBD82E /* ActionItem.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
 		E476AC4923158BEE00A3A1FF = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +114,7 @@
 		E476AC6823158C3200A3A1FF /* RightClickExtension */ = {
 			isa = PBXGroup;
 			children = (
+				D74559D425C2398500FBD82E /* Actions */,
 				D7B4838824FE9E1200B50BA8 /* Assets.xcassets */,
 				E476AC6923158C3200A3A1FF /* RightClickExtension.swift */,
 				E476AC6B23158C3200A3A1FF /* Info.plist */,
@@ -234,6 +245,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D74559D625C2399D00FBD82E /* ActionItem.swift in Sources */,
 				E476AC6A23158C3200A3A1FF /* RightClickExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
