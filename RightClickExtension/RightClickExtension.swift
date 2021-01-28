@@ -13,7 +13,7 @@ class FinderSync: FIFinderSync {
 
 	override var toolbarItemName: String { return "Pho Finder Sync" }
 	override var toolbarItemImage: NSImage { return NSImage(named: "single")! }
-	override var toolbarItemToolTip: String { return "Pho Finder Snyc Extension" }
+	override var toolbarItemToolTip: String { return "Pho Finder Sync Extension" }
 
     override init() {
         super.init()
