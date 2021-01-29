@@ -8,12 +8,14 @@
 
 import Foundation
 import Cocoa
+import ShellOut
 
 
 struct Helpers {
 
-//	static func isGitRepository(url: URL) -> Bool {
-//		let command = "[ -d .git ] && echo .git || git rev-parse --git-dir > /dev/null 2>&1"
+	static func isGitRepository(url: URL) -> Bool {
+////		let command = "[ -d .git ] && echo .git || git rev-parse --git-dir > /dev/null 2>&1"
+		let command = "[ -d .git ] && echo .git || git rev-parse --git-dir"
 //		let task = Process()
 //		task.executableURL = URL(fileURLWithPath: "/usr/bin/open")
 //		task.arguments = arguments
@@ -22,8 +24,18 @@ struct Helpers {
 //		} catch let error as NSError {
 //			NSLog("performOpen(programPathString: \(programPathString), additionalArguments: ...): Failed to open the app: %@", error.description as NSString)
 //		}
-//		
-//	}
+
+		do {
+			try shellOut(to: command)
+			return true
+		} catch {
+//			let error = error as! ShellOutError
+//			print(error.message) // Prints STDERR
+//			print(error.output) // Prints STDOUT
+			return false
+		}
+
+	}
 
 
 

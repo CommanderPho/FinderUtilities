@@ -3,12 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		D74559D625C2399D00FBD82E /* ActionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74559D525C2399D00FBD82E /* ActionItem.swift */; };
 		D74559DE25C240FE00FBD82E /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74559DD25C240FE00FBD82E /* HelperFunctions.swift */; };
+		D7A2A8F325C388760069ABC7 /* ShellOut in Frameworks */ = {isa = PBXBuildFile; productRef = D7A2A8F225C388760069ABC7 /* ShellOut */; };
 		D7B4838924FE9E1200B50BA8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7B4838824FE9E1200B50BA8 /* Assets.xcassets */; };
 		E476AC5623158BEE00A3A1FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E476AC5523158BEE00A3A1FF /* AppDelegate.swift */; };
 		E476AC5823158BEF00A3A1FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E476AC5723158BEF00A3A1FF /* Assets.xcassets */; };
@@ -69,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7A2A8F325C388760069ABC7 /* ShellOut in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,6 +180,7 @@
 			);
 			name = RightClickExtension;
 			packageProductDependencies = (
+				D7A2A8F225C388760069ABC7 /* ShellOut */,
 			);
 			productName = RightClickExtension;
 			productReference = E476AC6723158C3200A3A1FF /* RightClickExtension.appex */;
@@ -224,6 +227,7 @@
 			);
 			mainGroup = E476AC4923158BEE00A3A1FF;
 			packageReferences = (
+				D7A2A8F125C388760069ABC7 /* XCRemoteSwiftPackageReference "ShellOut" */,
 			);
 			productRefGroup = E476AC5323158BEE00A3A1FF /* Products */;
 			projectDirPath = "";
@@ -542,6 +546,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D7A2A8F125C388760069ABC7 /* XCRemoteSwiftPackageReference "ShellOut" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JohnSundell/ShellOut.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D7A2A8F225C388760069ABC7 /* ShellOut */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D7A2A8F125C388760069ABC7 /* XCRemoteSwiftPackageReference "ShellOut" */;
+			productName = ShellOut;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E476AC4A23158BEE00A3A1FF /* Project object */;
 }
